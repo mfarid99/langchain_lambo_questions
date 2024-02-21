@@ -1,0 +1,83 @@
+package com.herokuapp.theinternet;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+
+public class PositiveTests {
+	
+	@Test
+	public void loginTest() {
+		// create driver
+		System.out.println("Test Started");
+		WebDriver driver = new ChromeDriver();
+		sleep(2);
+
+//		String url = "https://the-internet.herokuapp.com/login";
+//		driver.get(url);
+//		sleep(2);
+		
+		String url = "https://accounts.salesloft.com/sign_in";
+		driver.get(url);
+
+		driver.manage().window().maximize();
+		sleep(2);
+//		WebElement username = driver.findElement(By.id("username"));
+//		username.sendKeys("tomsmith");
+		WebElement username = driver.findElement(By.id("user_email"));
+		username.sendKeys("jasdeep@triblio.com");
+		sleep(2);
+		WebElement next = driver.findElement(By.className("btn sl-button-accent btn-lg responsive-1"));
+		next.click();
+		sleep(2);
+		WebElement password = driver.findElement(By.id("user_password"));
+		password.sendKeys("Triblio1234");
+		sleep(2);
+		WebElement signin = driver.findElement(By.className("btn sl-button-accent btn-lg responsive-1"));
+		signin.click();
+		
+		sleep(20);
+
+//		WebElement password = driver.findElement(By.id("password"));
+//		password.sendKeys("SuperSecretPassword!");
+//		sleep(2);
+
+//		WebElement loginButton = driver.findElement(By.className("radius"));
+//		loginButton.click();
+//		sleep(2);
+		
+//		String expectedUrl = "https://the-internet.herokuapp.com/secure";
+//		String actualUrl = driver.getCurrentUrl();
+//		Assert.assertEquals(actualUrl, expectedUrl, "Actual page url is not the same as expected url");
+//		
+//
+//		WebElement logoutButton = driver.findElement(By.xpath("//a[@class=\"button secondary radius\"]"));
+//		WebElement message = driver.findElement(By.cssSelector("div#flash"));
+		
+
+		
+		System.out.println("Browser Opened");
+//		driver.close();
+		sleep(5);
+		driver.quit();
+		System.out.println("Browser Closed");
+	}
+
+	/**
+	 * slows down tests for given number of seconds
+	 * @param seconds
+	 */
+	private void sleep(int seconds) {
+		try {
+			Thread.sleep(seconds * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+ 
+}
