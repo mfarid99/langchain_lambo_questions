@@ -1,0 +1,36 @@
+# Jupyter Notebook files
+*.ipynb_checkpoints
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment directories
+venv/
+env/
+.venv/
+.env/
+
+# Config files
+config.py
+
+# Jupyter Notebook metadata
+*.nbconvert*
+
+# Jupyter runtime files
+*.json
+
+# Other files to ignore
+*.log
+*.bak
+*.swp
+*.swo
+
+# MacOS Finder
+.DS_Store
+
+# VSCode settings
+.vscode/
+
