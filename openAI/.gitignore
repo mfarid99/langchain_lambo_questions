@@ -1,8 +1,0 @@
-__pycache__/
-*.pyc
-
-# Ignore environment files
-.env
-
-# Ignore API key config
-config.py
